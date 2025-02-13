@@ -1,0 +1,16 @@
+{
+    "device_id": "DIGASIS-01",
+    "device_type": "ESP32",
+    "location": "Bintaro",
+    "timestamp": "2025-02-14T12:34:56Z",
+    "sensor_data": {
+        "temperature": 26.3,
+        "humidity": 58.2
+    },
+    "power_consumption": {
+        "voltage": 220,
+        "current": 0.5,
+        "power": 110
+    },
+    "battery_level": 85
+}
