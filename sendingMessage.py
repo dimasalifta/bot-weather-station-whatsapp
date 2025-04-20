@@ -1,9 +1,9 @@
 import requests
 
-url = "https://7103.api.greenapi.com/waInstance7103191495/sendMessage/1b176603c8304f2fac6e55871242c73835c693d2618a4a80a2"
+url = "https://api.greenapi.com/waInstance7103191495/sendMessage/1b176603c8304f2fac6e55871242c73835c693d2618a4a80a2"
 
 payload = {
-"chatId": "120363401415006234@g.us", 
+"chatId": "6289669791324@c.us", 
 "message": "test"
 }
 headers = {
