@@ -13,11 +13,11 @@ MQTT_TOPIC = os.getenv("MQTT_TOPIC")
 MQTT_USERNAME = os.getenv("MQTT_USERNAME", None)
 MQTT_PASSWORD = os.getenv("MQTT_PASSWORD", None)
 
-URL_API_GREENAPI = os.getenv("URL_API_GREENAPI", None)
+URL_API_GREENAPI = os.getenv("URL_API_GREENAPI", 'https://api.greenapi.com/waInstance7105242912/sendMessage/7ab1c9ec3fc448b280300ab4eab6d12e149762adb6ec43949c')
 WHATSAPP_CHAT_ID = os.getenv("WHATSAPP_CHAT_ID", None)
-WHATSAPP_GROUP_ID = os.getenv("WHATSAPP_GROUP_ID", None)
+WHATSAPP_GROUP_ID = os.getenv("WHATSAPP_GROUP_ID", '120363416927198799@g.us')
 
-def estimate_battery_capacity(voltage, current, initial_capacity=9.0):
+def estimate_battery_capacity(voltage, current, initial_capacity=12.0):
     soc_voltage = round(max(0, min(100, ((voltage - 11.0) / 3.4) * 100)), 2)
     
     return soc_voltage
@@ -114,6 +114,7 @@ def on_message(client, userdata, msg):
         LOAD_CURRENT    = float(data[14])
         LOAD_POWER      = float(data[15])
         WATER_TEMP      = float(data[16])
+        FLOW_RATE      = float(data[17])
 
         # Estimasi kapasitas baterai
         BATTERY = estimate_battery_capacity(BATTERY_VOLTAGE, BATTERY_CURRENT)
@@ -133,6 +134,7 @@ def on_message(client, userdata, msg):
             f"🔋 *Battery*     : {BATTERY_VOLTAGE}V / {BATTERY_CURRENT}mA / {BATTERY_POWER}mW ({BATTERY}%)\n"
             f"🔌 *Load*        : {LOAD_VOLTAGE}V / {LOAD_CURRENT}mA / {LOAD_POWER}mW\n"
             f"🌊 *Water Temp*  : {WATER_TEMP}°C\n"
+            f"🌀 *Flow Rate*   : {FLOW_RATE}L/min\n"
             f"──────────────────────"
         )
 

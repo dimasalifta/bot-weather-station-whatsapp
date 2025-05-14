@@ -1,9 +1,16 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-url = "https://api.greenapi.com/waInstance7103191495/sendMessage/1b176603c8304f2fac6e55871242c73835c693d2618a4a80a2"
+URL_API_GREENAPI = os.getenv("URL_API_GREENAPI", None)
+WHATSAPP_CHAT_ID = os.getenv("WHATSAPP_CHAT_ID", None)
+WHATSAPP_GROUP_ID = os.getenv("WHATSAPP_GROUP_ID", None)
+
+# url = "https://api.greenapi.com/waInstance7105242912/sendMessage/7ab1c9ec3fc448b280300ab4eab6d12e149762adb6ec43949c"
+url = URL_API_GREENAPI
 
 payload = {
-"chatId": "6289669791324@c.us", 
+"chatId": "120363416927198799@g.us", 
 "message": "test"
 }
 headers = {
